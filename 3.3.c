@@ -1,22 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#define d (b*b-4*a*c)
-int main()
-{
-	int a,b,c;
-	float root1,root2;
-	printf("enter the a,b,c in ax^2+bx+c: ");
-	scanf("%d,%d,%d",&a,&b,&c);
-	if(d > 0)
-	{
-		root1= (-b+sqrt(d))/2*a;
-		root2= (-b-sqrt(d))/2*a;
-		printf("the roots are: %d,%.2f,%.2f\n",d,root1,root2);
-	}
-	if(d<0)
-	{
-		printf("the roots for these coordinate are not possible");
-		printf("\n");
-	}
-}
+
+typedef struct node node_t;
+struct node { void *data;
+node_t *left; node_t *rght;
+};
+typedef struct { node_t *root;
+int (*cmp)(void*,void*); } tree_t;
+/* ptr to stored structure */ /* left subtree of node */ /* right subtree of node */
+/* root node of the tree */ /* function pointer */
+/* prototypes for the functions in this library */ tree_t *make_empty_tree(int func(void*,void*)); int is_empty_tree(tree_t *tree); void *search_tree(tree_t *tree, void *key);
+tree_t *insert_in_order(tree_t *tree, void *value); void traverse_tree(tree_t *tree, void action(void*)); void free_tree(tree_t *tree);
+ 

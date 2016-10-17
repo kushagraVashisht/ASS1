@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+int main()
+{
+	int next,count=0,words;
+	char w[100];
+	printf("Write something duh!!");
+	scanf("%d",&words);
+	while(scanf("%d",&next)!=EOF)
+	{
+		w[count]=next;
+	}
+	
+}
